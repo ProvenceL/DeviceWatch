@@ -1,41 +1,33 @@
 import React from 'react';
-import { NavBar, Icon, WhiteSpace, Tabs, SearchBar,List,Brief } from 'antd-mobile';
+import { NavBar, Icon, WhiteSpace, Tabs, } from 'antd-mobile';
 import { StickyContainer, Sticky } from 'react-sticky';
-
+import RegisterInfo from "./RegisterInfo";
+import DeviceTestInfo from "./DeviceTestInfo";
 export default class DeviceDetail extends React.Component {
   constructor(props) {
     super(props);
     this.munuList = [
-      { title: 'First Tab' },
-      { title: 'Second Tab' },
-      { title: 'Third Tab' },
+      { title: '登记信息' },
+      { title: '技术参数' },
+      { title: '设备检验信息' },
     ];
   }
   render() {
-    let { test } = this.props;
-    const data1 = Array.from(new Array(6)).map(() => ({
-      icon: 'https://gw.alipayobjects.com/zos/rmsportal/WXoqXTHrSnRcUwEaQgXJ.png',
-    }));
+    let { deviceDetail,deviceCheckList } = this.props;
+    console.warn("device detail ",deviceDetail,"deviceCheckList is ",deviceCheckList);
     return <div>
       <NavBar mode="light" icon={<Icon type="left" />} onLeftClick={() => history.back()}>设备详情</NavBar>
-
       <WhiteSpace />
       <StickyContainer>
         <Tabs tabs={this.munuList}
           initalPage={'t2'}
           renderTabBar={this._renderTabBar}
         >
-          <List renderHeader={() => ''} className="my-list">
-            <List.Item multipleLine extra="extra content" onClick={()=>window.goRoute(window.routeMap.companyDetail)}>
-              Title <List.Item.Brief>subtitle</List.Item.Brief>
-            </List.Item>
-          </List>
+          <RegisterInfo deviceDetail={deviceDetail} />
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '250px', backgroundColor: '#fff' }}>
-            Content of second tab
-        </div>
-          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '250px', backgroundColor: '#fff' }}>
-            Content of third tab
-        </div>
+            暂时不做！
+          </div>
+          <DeviceTestInfo deviceCheckList={deviceCheckList} />
         </Tabs>
       </StickyContainer>
       <WhiteSpace />

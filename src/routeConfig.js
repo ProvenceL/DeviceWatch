@@ -4,9 +4,10 @@ import CompanyManage from './containers/DeciveWatch/CompanyManage';
 import CompanyDetail from './containers/DeciveWatch/CompanyDetail';
 import DeviceManage from './containers/DeciveWatch/DeviceManage';
 import DeviceDetail from './containers/DeciveWatch/DeviceDetail';
-import TaskManage from './containers/DeciveWatch/TaskManage';
-import TaskDetail from './containers/DeciveWatch/TaskDetail';
+import CheckManage from './containers/DeciveWatch/CheckManage';
+import CheckDetail from './containers/DeciveWatch/CheckDetail';
 import SupervisoryReview from './containers/DeciveWatch/SupervisoryReview';
+import SupervisoryDetail from "./components/DeciveWatch/SupervisoryDetail/ProduceCheckList";
 
 
 export const routeMap = {
@@ -16,9 +17,10 @@ export const routeMap = {
   companyDetail:'/companyDetail',
   deviceManage:'/deviceManage',
   deviceDetail:'/deviceDetail',
-  taskManage:'/taskManage',
-  taskDetail:'/taskDetail',
+  checkManage:'/checkManage',
+  checkDetail:'/checkDetail',
   supervisoryReview:'/supervisoryReview',
+  example:'/example',
 };
 const routeConfig = {
   [routeMap.deviceWatch]:MainPage,//智慧市场监管
@@ -27,9 +29,10 @@ const routeConfig = {
   [routeMap.companyDetail]:CompanyDetail,//企业详情
   [routeMap.deviceManage]:DeviceManage,//设备管理
   [routeMap.deviceDetail]:DeviceDetail,//设备详情
-  [routeMap.taskManage]:TaskManage,//任务管理
-  [routeMap.taskDetail]:TaskDetail,//任务详情
+  [routeMap.checkManage]:CheckManage,//任务管理
+  [routeMap.checkDetail]:CheckDetail,//任务详情
   [routeMap.supervisoryReview]:SupervisoryReview,//监督检查
+  [routeMap.example]:SupervisoryDetail,//example
 };
 
 export default routeConfig;

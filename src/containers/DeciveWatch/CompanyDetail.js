@@ -2,7 +2,7 @@ import { connect } from 'react-redux'
 import CompanyDetail from '../../components/DeciveWatch/CompanyDetail'
 
 const mapStateToProps = (state) => ({
-  test: state.deviceWatch.test
+  companyDetail: state.company.companyDetail
 });
 
 const mapDispatchToProps = (state) => ({});

@@ -8,6 +8,9 @@ import 'service';
 import './theme/index.less';
 import routeConfig,{routeMap} from './routeConfig';
 
+import {Alert} from "./components/Common/Alert";
+import {Confirm} from "./components/Common/Confirm";
+
 let store = createStore(reducers);
 window.$getState = store.getState;
 window.$dispatch = store.dispatch;
@@ -29,3 +32,5 @@ function renderRoute(routeMap){
 }
 window.goRoute(window.routeMap.deviceWatch);
 
+window.alert = Alert;
+window.confirm = Confirm;

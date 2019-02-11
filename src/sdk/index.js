@@ -1,12 +1,17 @@
-const init_Main_Page_Data = 'deviceWatch/initMainPageData';
+import * as deviceManage from './deviceManage';
+import * as companyManage from './companyManage';
+import * as checkManage from './checkManage';
+import * as supervisoryReview from './supervisoryReview';
 
-const initState = {
-  testData: 'test'
-};
+export const getAllDevice = deviceManage.getAllDevice;
+export const getDeviceDetail = deviceManage.getDeviceDetail;
+export const getDeviceCheckList = deviceManage.getDeviceCheckList;
 
-export default function reducer(state = initState, action) {
-  switch (action.type) {
-    default:
-      return state;
-  }
-}
+export const getAllCompanyList = companyManage.getAllCompanyList;
+export const getCompanyDetail = companyManage.getCompanyDetail;
+
+export const getAllCheckList = checkManage.getAllCheckList;
+export const getCheckDetail = checkManage.getCheckDetail;
+
+export const getSupervisoryList = supervisoryReview.getSupervisoryList;
+export const getSupervisoryDetail = supervisoryReview.getSupervisoryDetail;

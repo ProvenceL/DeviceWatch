@@ -8,8 +8,8 @@ export default class MainPage extends React.Component {
       {title:'统计分析',icon: 'https://gw.alipayobjects.com/zos/rmsportal/WXoqXTHrSnRcUwEaQgXJ.png',route:window.routeMap.statisticlAnalysis},
       {title:'企业管理',icon: 'https://gw.alipayobjects.com/zos/rmsportal/WXoqXTHrSnRcUwEaQgXJ.png',route:window.routeMap.companyManage},
       {title:'设备管理',icon: 'https://gw.alipayobjects.com/zos/rmsportal/WXoqXTHrSnRcUwEaQgXJ.png',route:window.routeMap.deviceManage},
-      {title:'任务管理',icon: 'https://gw.alipayobjects.com/zos/rmsportal/WXoqXTHrSnRcUwEaQgXJ.png',route:window.routeMap.taskManage},
-      {title:'监督检查',icon: 'https://gw.alipayobjects.com/zos/rmsportal/WXoqXTHrSnRcUwEaQgXJ.png',route:'companyManage'},
+      {title:'任务管理',icon: 'https://gw.alipayobjects.com/zos/rmsportal/WXoqXTHrSnRcUwEaQgXJ.png',route:window.routeMap.checkManage},
+      {title:'监督检查',icon: 'https://gw.alipayobjects.com/zos/rmsportal/WXoqXTHrSnRcUwEaQgXJ.png',route:window.routeMap.supervisoryReview},
       {title:'隐患管理',icon: 'https://gw.alipayobjects.com/zos/rmsportal/WXoqXTHrSnRcUwEaQgXJ.png',route:'companyManage'}
     ];
   }
@@ -18,9 +18,9 @@ export default class MainPage extends React.Component {
     const data1 = Array.from(new Array(6)).map(() => ({
       icon: 'https://gw.alipayobjects.com/zos/rmsportal/WXoqXTHrSnRcUwEaQgXJ.png',
     }));
-    return <div>
-      <NavBar mode="light" icon={<Icon type="left" />} onLeftClick={() => console.log('onLeftClick')}>智慧市场监管</NavBar>
-      <WingBlank>
+    return <div className="main-page">
+      <NavBar mode="light" className="main-top" icon={<Icon type="left" />} onLeftClick={() => console.log('onLeftClick')}>智慧市场监管</NavBar>
+      <WingBlank className="main-middle">
         <Carousel className="my-carousel"
                   vertical
                   dots={false}
@@ -38,6 +38,7 @@ export default class MainPage extends React.Component {
         </Carousel>
       </WingBlank>
       <Grid data={this.munuList}
+        className="main-bottom"
             columnNum={3}
             renderItem={this._renderMenuItem}
       />

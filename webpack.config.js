@@ -3,16 +3,16 @@ const webpack = require('webpack')
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const autoprefixer = require('autoprefixer');
 const pxtorem = require('postcss-pxtorem');
-
-const Visualizer = require('webpack-visualizer-plugin'); // remove it in production environment.
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin; // remove it in production environment.
+const webpackDev = require('webpack-dev-server');
+// const Visualizer = require('webpack-visualizer-plugin'); // ! 1.remove it in production environment.
+// const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin; //! 2. remove it in production environment.
 const otherPlugins = process.argv[1].indexOf('webpack-dev-server') >= 0 ? [] : [
-  new Visualizer(), // remove it in production environment.
-  new BundleAnalyzerPlugin({
-    defaultSizes: 'parsed',
-    // generateStatsFile: true,
-    statsOptions: { source: false }
-  }), // remove it in production environment.
+  // new Visualizer(), //! 3. remove it in production environment.
+  // new BundleAnalyzerPlugin({
+  //   defaultSizes: 'parsed',
+  //   // generateStatsFile: true,
+  //   statsOptions: { source: false }
+  // }), //! 4. remove it in production environment.
 ];
 
 const postcssOpts = {
@@ -95,5 +95,19 @@ module.exports = {
     }),
     new ExtractTextPlugin({ filename: '[name].css', allChunks: true }),
     ...otherPlugins
-  ]
+  ],
+  devServer: {
+    contentBase: './', //本地服务器所加载的页面所在的目录
+    historyApiFallback: true, //不跳转
+    inline:true,
+    host:'127.0.0.1',
+		port: 8080, //设置默认监听端口，如果省略，默认为”8080“
+    proxy: {
+        '/api': {
+            // target: 'http://47.101.48.215:18081/',
+            target: 'http://47.101.48.215:10081/',
+            // pathRewrite: {"^/api" : "/"}//这里把/api换成/SSM
+        }
+    }
+  },
 }
