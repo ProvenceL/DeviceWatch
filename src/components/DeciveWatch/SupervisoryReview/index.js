@@ -12,12 +12,6 @@ export default class SupervisoryManage extends React.Component {
       { title: '使用单位', companyType:108, pageIndex:1, },
       { title: '产权单位', companyType:109, pageIndex:1, },
       { title: '设计单位', companyType:110, pageIndex:1, },
-      { title: '制造单位', companyType:111, pageIndex:1, },
-      { title: '安装单位', companyType:112, pageIndex:1, },
-      { title: '改造单位', companyType:113, pageIndex:1, },
-      { title: '修理单位', companyType:114, pageIndex:1, },
-      { title: '维修单位', companyType:115, pageIndex:1, },
-      { title: '充装单位', companyType:116, pageIndex:1, },
     ];
     this.isRequesting = false;
   }
@@ -27,7 +21,7 @@ export default class SupervisoryManage extends React.Component {
 
   render() {
     return <div>
-      <NavBar mode="light" icon={<Icon type="left" />} onLeftClick={() => history.back()}>监督检查</NavBar>
+      <NavBar mode="light" icon={<Icon type="left" />} onLeftClick={() => history.back()}>子界面2</NavBar>
       <SearchBar placeholder="请输入企业名称、联系人名称、关键词" maxLength={100} />
       <WhiteSpace />
       <StickyContainer>
@@ -39,12 +33,6 @@ export default class SupervisoryManage extends React.Component {
           {this._renderTabContent(1)}
           {this._renderTabContent(2)}
           {this._renderTabContent(3)}
-          {this._renderTabContent(4)}
-          {this._renderTabContent(5)}
-          {this._renderTabContent(6)}
-          {this._renderTabContent(7)}
-          {this._renderTabContent(8)}
-          {this._renderTabContent(9)}
         </Tabs>
       </StickyContainer>
       <WhiteSpace />

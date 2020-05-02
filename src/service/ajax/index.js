@@ -166,6 +166,7 @@
 
   const ajaxGet = (url) => {
     return new Promise((resolve,reject)=>{
+      return resolve(null);
       ajax({
         type: "get",
         url: url,
@@ -196,13 +197,13 @@
     });
   };
   //获取token
-  const getToken = () => {
-    ajaxGet("/api/auth/verify?code=10dbb529-be4f-4dd7-a9b9-1c6b985f760b").then((data)=>{
-      window.token = "Bearer " + data.token;
-    });
-  }
+  // const getToken = () => {
+  //   ajaxGet("/api/auth/verify?code=10dbb529-be4f-4dd7-a9b9-1c6b985f760b").then((data)=>{
+  //     window.token = "Bearer " + data.token;
+  //   });
+  // }
   // 每次登录重新获取token
-  getToken();
+  // getToken();
   window.ajaxGet = ajaxGet;
   window.ajax = ajax;
 })(window);

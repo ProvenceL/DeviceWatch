@@ -12,7 +12,7 @@ export default class CheckManage extends React.Component {
     let { checkList } = this.props;
     let maxPage = checkList.pages || 1;
     return <div>
-      <NavBar mode="light" icon={<Icon type="left" />} onLeftClick={() => history.back()}>任务管理</NavBar>
+      <NavBar mode="light" icon={<Icon type="left" />} onLeftClick={() => history.back()}>子界面1</NavBar>
       <WhiteSpace />
       <InfiniteList
         className="check-list"

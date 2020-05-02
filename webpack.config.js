@@ -95,19 +95,5 @@ module.exports = {
     }),
     new ExtractTextPlugin({ filename: '[name].css', allChunks: true }),
     ...otherPlugins
-  ],
-  devServer: {
-    contentBase: './', //本地服务器所加载的页面所在的目录
-    historyApiFallback: true, //不跳转
-    inline:true,
-    host:'127.0.0.1',
-		port: 8080, //设置默认监听端口，如果省略，默认为”8080“
-    proxy: {
-        '/api': {
-            // target: 'http://47.101.48.215:18081/',
-            target: 'http://47.101.48.215:10081/',
-            // pathRewrite: {"^/api" : "/"}//这里把/api换成/SSM
-        }
-    }
-  },
+  ]
 }
